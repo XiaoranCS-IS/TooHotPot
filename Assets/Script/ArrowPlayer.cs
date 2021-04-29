@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class ArrowPlayer : MonoBehaviour
 {
     public float speed;
     public float rotationSpeed;
@@ -31,32 +31,32 @@ public class Player : MonoBehaviour
 
         transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             movementZ = 1;
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             movementZ = -1;
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             movementX = -1;
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             movementX = 1;
         }
 
-        if (Input.GetKeyUp(KeyCode.W)||Input.GetKeyUp(KeyCode.S))
+        if (Input.GetKeyUp(KeyCode.UpArrow)||Input.GetKeyUp(KeyCode.DownArrow))
         {
             movementZ = 0;
         }
 
-        if (Input.GetKeyUp(KeyCode.A)||Input.GetKeyUp(KeyCode.D))
+        if (Input.GetKeyUp(KeyCode.LeftArrow)||Input.GetKeyUp(KeyCode.RightArrow))
         {
             movementX = 0;
         }

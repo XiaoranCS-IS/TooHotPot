@@ -94,8 +94,8 @@ public class ObjectController : MonoBehaviour
         else if(!player.GetComponent<Player>().isEquipped && !isEquipped && Input.GetKeyDown(KeyCode.H)){
             if (table != null){
                 if (transform.parent == table.transform){
-                    //if H pressed and food on selected table
-                    if (table.GetComponent<Table>().isSelected){
+                    //if H pressed and food on selected chopping table
+                    if (table.GetComponent<Table>().isSelected && table.GetComponent<Table>().type == 4){
                         ChoppingFood();
                     }
                 }
