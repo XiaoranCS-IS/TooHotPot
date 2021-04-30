@@ -6,13 +6,16 @@ public class TableController : MonoBehaviour
 {
     public GameObject[] table;
     public Transform player;
+    public Transform arrowPlayer;
 
     public float selectedRange;
     public Color selectedColor;
     public Color unSelectedColor;
     public GameObject selectedTable;
+    public GameObject arrowPlayerSelectedTable;
 
     private float shortestDis;
+    private float arrowPlayershortestDis;
     
 
     private void Start() {
@@ -24,6 +27,7 @@ public class TableController : MonoBehaviour
     private void Update()
     {
         shortestDis = selectedRange;
+        arrowPlayershortestDis = selectedRange;
         for (int i = 0; i < table.Length; i++)
         {
             // check if table is in range
@@ -32,6 +36,14 @@ public class TableController : MonoBehaviour
             {
                 shortestDis = distanceToPlayer.magnitude;
                 selectedTable = table[i];
+            }
+
+            //check arrow player range
+            distanceToPlayer = arrowPlayer.position - table[i].transform.position;
+            if (distanceToPlayer.magnitude < arrowPlayershortestDis)
+            {
+                arrowPlayershortestDis = distanceToPlayer.magnitude;
+                arrowPlayerSelectedTable = table[i];
             }
 
             LeaveTable(table[i].GetComponent<Renderer>());
@@ -44,6 +56,15 @@ public class TableController : MonoBehaviour
                 SelectTable(selectedTable.GetComponent<Renderer>());
             else
                 selectedTable = null;
+        }
+
+        if (arrowPlayerSelectedTable)
+        {
+            Vector3 distance = arrowPlayer.position - arrowPlayerSelectedTable.transform.position;
+            if(distance.magnitude <= selectedRange)
+                SelectTable(arrowPlayerSelectedTable.GetComponent<Renderer>());
+            else
+                arrowPlayerSelectedTable = null;
         }
     }
 

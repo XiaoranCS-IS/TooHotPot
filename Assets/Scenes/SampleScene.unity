@@ -5341,6 +5341,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &181077415
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10631,6 +10633,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &285701739
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10742,6 +10746,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &324109841
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11422,6 +11428,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!1 &406786636
 GameObject:
   m_ObjectHideFlags: 0
@@ -11547,6 +11555,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &421634235
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11920,6 +11930,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &514996411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12091,6 +12103,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!1 &582244115
 GameObject:
   m_ObjectHideFlags: 0
@@ -12142,6 +12156,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &582244118
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12520,6 +12536,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &647552441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13013,6 +13031,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &930075299
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13239,6 +13259,8 @@ MonoBehaviour:
   type: 2
   food: {fileID: 1601995341}
   player: {fileID: 1375067690}
+  arrowPlayer: {fileID: 350410761}
+  tableList: {fileID: 1229768372}
 --- !u!65 &1015840102
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13350,6 +13372,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &1017361056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14142,6 +14166,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &1134229205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14365,6 +14391,7 @@ MonoBehaviour:
   statusBar: {fileID: 426373486}
   progressBar: {fileID: 383867056}
   player: {fileID: 1375067690}
+  arrowPlayer: {fileID: 350410761}
   pickUpRange: 2
   dropForwardForce: 1
   throwForwardForce: 7
@@ -14373,6 +14400,7 @@ MonoBehaviour:
   menu: {fileID: 744073615}
   table: {fileID: 526111702}
   tableList: {fileID: 1229768372}
+  pickupPlayer: 0
 --- !u!1 &1181633576
 GameObject:
   m_ObjectHideFlags: 0
@@ -14518,6 +14546,8 @@ MonoBehaviour:
   type: 4
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &1215420201
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14629,6 +14659,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &1229114170
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14782,10 +14814,12 @@ MonoBehaviour:
   - {fileID: 1015840099}
   - {fileID: 1371922495}
   player: {fileID: 1375067693}
+  arrowPlayer: {fileID: 350410762}
   selectedRange: 1.5
   selectedColor: {r: 1, g: 1, b: 1, a: 0}
   unSelectedColor: {r: 0, g: 0, b: 0, a: 0}
   selectedTable: {fileID: 0}
+  arrowPlayerSelectedTable: {fileID: 0}
 --- !u!1 &1251036963
 GameObject:
   m_ObjectHideFlags: 0
@@ -15379,6 +15413,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &1371922498
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15819,6 +15855,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &1453587129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16083,6 +16121,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!1 &1515574149
 GameObject:
   m_ObjectHideFlags: 0
@@ -16228,6 +16268,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &1545206788
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16413,6 +16455,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &1549002276
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16645,6 +16689,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &1581742078
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16818,6 +16864,7 @@ MonoBehaviour:
   statusBar: {fileID: 328651372}
   progressBar: {fileID: 1029770961}
   player: {fileID: 1375067690}
+  arrowPlayer: {fileID: 350410761}
   pickUpRange: 2
   dropForwardForce: 1
   throwForwardForce: 7
@@ -16826,6 +16873,7 @@ MonoBehaviour:
   menu: {fileID: 744073615}
   table: {fileID: 1483048958}
   tableList: {fileID: 1229768372}
+  pickupPlayer: 0
 --- !u!54 &1601995343
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26636,6 +26684,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &1795475368
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27026,6 +27076,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!65 &2014225458
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27441,6 +27493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   window: {fileID: 2083539891}
   player: {fileID: 1375067693}
+  arrowPlayer: {fileID: 350410762}
   isSelected: 0
   selectedRange: 1.5
   selectedColor: {r: 1, g: 1, b: 1, a: 0}
@@ -27556,6 +27609,8 @@ MonoBehaviour:
   type: 0
   food: {fileID: 0}
   player: {fileID: 0}
+  arrowPlayer: {fileID: 0}
+  tableList: {fileID: 0}
 --- !u!1 &2103205049
 GameObject:
   m_ObjectHideFlags: 0
