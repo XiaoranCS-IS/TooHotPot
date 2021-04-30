@@ -4,22 +4,19 @@ using UnityEngine;
 
 public class MenuController : MonoBehaviour
 {
-    //1. hotpot 2. food
+    //1. spicy hotpot 2. mild hotpot 3.meat 4.mushroom
     public int type;
     public GameObject hotpotIcon;
     public GameObject spicyIcon;
-    public GameObject meatIcon;
+    public GameObject mildIcon;
     public GameObject chopIcon;
-    public string taste;
+    public GameObject meatIcon;
+    public GameObject mushroomIcon;
     public string food;
     // Start is called before the first frame update
     void Start()
     {
-        type = 1;
-        hotpotIcon.SetActive(true);
-        spicyIcon.SetActive(true);
-        meatIcon.SetActive(false);
-        chopIcon.SetActive(false);
+        UpdateMenu();
     }
 
     // Update is called once per frame
@@ -29,19 +26,45 @@ public class MenuController : MonoBehaviour
     }
 
     public void UpdateMenu() {
-        if(type == 1){
-            type = 2;
-            hotpotIcon.SetActive(false);
-            spicyIcon.SetActive(false);
-            meatIcon.SetActive(true);
-            chopIcon.SetActive(true);
-        }
-        else if (type == 2){
-            type = 1;
-            hotpotIcon.SetActive(true);
-            spicyIcon.SetActive(true);
-            meatIcon.SetActive(false);
-            chopIcon.SetActive(false);
+        //random menu
+        type = Random.Range(1, 5);
+        switch (type)
+        {
+            case 1:
+                hotpotIcon.SetActive(true);
+                spicyIcon.SetActive(true);
+                mildIcon.SetActive(false);
+                chopIcon.SetActive(false);
+                meatIcon.SetActive(false);
+                mushroomIcon.SetActive(false);
+                break;
+            case 2:
+                hotpotIcon.SetActive(true);
+                spicyIcon.SetActive(false);
+                mildIcon.SetActive(true);
+                chopIcon.SetActive(false);
+                meatIcon.SetActive(false);
+                mushroomIcon.SetActive(false);
+                break;
+            case 3:
+                hotpotIcon.SetActive(false);
+                spicyIcon.SetActive(false);
+                mildIcon.SetActive(false);
+                chopIcon.SetActive(true);
+                meatIcon.SetActive(true);
+                mushroomIcon.SetActive(false);
+                break;
+            case 4:
+                hotpotIcon.SetActive(false);
+                spicyIcon.SetActive(false);
+                mildIcon.SetActive(false);
+                chopIcon.SetActive(true);
+                meatIcon.SetActive(false);
+                mushroomIcon.SetActive(true);
+                break;
+            default:
+                print("Error!!!");
+                break;
         }
     }
 }

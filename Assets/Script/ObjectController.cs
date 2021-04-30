@@ -82,7 +82,7 @@ public class ObjectController : MonoBehaviour
                         //menu match 1. hotpot 2. food
                         if(menu.GetComponent<MenuController>().type == 1){
                             // pot must be heated
-                            if (progressBar.GetComponent<Slider>().value == 1 && gameObject.tag == "Hotpot")
+                            if (progressBar.GetComponent<Slider>().value == 1 && gameObject.tag == "SpicyHotpot")
                             { 
                                 ScoreController.scoreBoard.AddScore();
                                 player.GetComponent<Player>().isEquipped = false;
@@ -95,8 +95,36 @@ public class ObjectController : MonoBehaviour
                                 //to do sound
                         }
                         else if (menu.GetComponent<MenuController>().type == 2){
+                            // pot must be chopped
+                            if (progressBar.GetComponent<Slider>().value == 1 && gameObject.tag == "MildHotpot")
+                            { 
+                                ScoreController.scoreBoard.AddScore();
+                                player.GetComponent<Player>().isEquipped = false;
+                                Destroy(gameObject);
+
+                                //refresh menu
+                                menu.GetComponent<MenuController>().UpdateMenu();
+                            }
+                            
+                                //to do sound
+                        }
+                        else if (menu.GetComponent<MenuController>().type == 3){
                             // food must be chopped
                             if (progressBar.GetComponent<Slider>().value == 1 && gameObject.tag == "Meat")
+                            { 
+                                ScoreController.scoreBoard.AddScore();
+                                player.GetComponent<Player>().isEquipped = false;
+                                Destroy(gameObject);
+
+                                //refresh menu
+                                menu.GetComponent<MenuController>().UpdateMenu();
+                            }
+                            
+                                //to do sound
+                        }
+                        else if (menu.GetComponent<MenuController>().type == 4){
+                            // food must be chopped
+                            if (progressBar.GetComponent<Slider>().value == 1 && gameObject.tag == "Mushroom")
                             { 
                                 ScoreController.scoreBoard.AddScore();
                                 player.GetComponent<Player>().isEquipped = false;
@@ -158,7 +186,7 @@ public class ObjectController : MonoBehaviour
                         //menu match 1. hotpot 2. food
                         if(menu.GetComponent<MenuController>().type == 1){
                             // pot must be heated
-                            if (progressBar.GetComponent<Slider>().value == 1 && gameObject.tag == "Hotpot")
+                            if (progressBar.GetComponent<Slider>().value == 1 && gameObject.tag == "SpicyHotpot")
                             {
                                 ScoreController.scoreBoard.AddScore();
                                 arrowPlayer.GetComponent<ArrowPlayer>().isEquipped = false;
@@ -170,8 +198,34 @@ public class ObjectController : MonoBehaviour
                                 //to do sound
                         }
                         else if(menu.GetComponent<MenuController>().type == 2){
-                            // food must be chopped
+                            // pot must be chopped
+                            if (progressBar.GetComponent<Slider>().value == 1 && gameObject.tag == "MildHotpot")
+                            {
+                                ScoreController.scoreBoard.AddScore();
+                                arrowPlayer.GetComponent<ArrowPlayer>().isEquipped = false;
+                                Destroy(gameObject);
+
+                                //refresh menu
+                                menu.GetComponent<MenuController>().UpdateMenu();
+                            }   
+                                //to do sound
+                        }
+                        else if(menu.GetComponent<MenuController>().type == 3){
+                            // pot must be chopped
                             if (progressBar.GetComponent<Slider>().value == 1 && gameObject.tag == "Meat")
+                            {
+                                ScoreController.scoreBoard.AddScore();
+                                arrowPlayer.GetComponent<ArrowPlayer>().isEquipped = false;
+                                Destroy(gameObject);
+
+                                //refresh menu
+                                menu.GetComponent<MenuController>().UpdateMenu();
+                            }   
+                                //to do sound
+                        }
+                        else if(menu.GetComponent<MenuController>().type == 4){
+                            // pot must be chopped
+                            if (progressBar.GetComponent<Slider>().value == 1 && gameObject.tag == "Mushroom")
                             {
                                 ScoreController.scoreBoard.AddScore();
                                 arrowPlayer.GetComponent<ArrowPlayer>().isEquipped = false;
