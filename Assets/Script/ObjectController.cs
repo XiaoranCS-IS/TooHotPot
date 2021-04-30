@@ -80,13 +80,23 @@ public class ObjectController : MonoBehaviour
                     // serving food
                     if(servingWindow.GetComponent<ServingWindowController>().isSelected) {
                         //menu match 1. hotpot 2. food
-                        // if(menu.GetComponent<MenuController>().type == 1){
+                        if(menu.GetComponent<MenuController>().type == 1){
+                            // pot must be heated
+                            if (progressBar.GetComponent<Slider>().value == 1 && gameObject.tag == "Hotpot")
+                            { 
+                                ScoreController.scoreBoard.AddScore();
+                                player.GetComponent<Player>().isEquipped = false;
+                                Destroy(gameObject);
 
-                        // }
-                        // else if (menu.GetComponent<MenuController>().type == 2){
-                        if (true){
+                                //refresh menu
+                                menu.GetComponent<MenuController>().UpdateMenu();
+                            }
+                            
+                                //to do sound
+                        }
+                        else if (menu.GetComponent<MenuController>().type == 2){
                             // food must be chopped
-                            if (progressBar.GetComponent<Slider>().value == 1)
+                            if (progressBar.GetComponent<Slider>().value == 1 && gameObject.tag == "Meat")
                             { 
                                 ScoreController.scoreBoard.AddScore();
                                 player.GetComponent<Player>().isEquipped = false;
@@ -133,7 +143,6 @@ public class ObjectController : MonoBehaviour
                 //if object on table, only pick up object on the selected table
                 else if (transform.parent == table.transform){
                     if (table.GetComponent<Table>().isSelected){
-                        print("111111");
                         ArrowPlayerPickUp();
                     }
                 }
@@ -147,22 +156,30 @@ public class ObjectController : MonoBehaviour
                     // serving food
                     if(servingWindow.GetComponent<ServingWindowController>().isSelected) {
                         //menu match 1. hotpot 2. food
-                        // if(menu.GetComponent<MenuController>().type == 1){
-
-                        // }
-                        // else if (menu.GetComponent<MenuController>().type == 2){
-                        if (true){
-                            // food must be chopped
-                            if (progressBar.GetComponent<Slider>().value == 1)
-                            { 
+                        if(menu.GetComponent<MenuController>().type == 1){
+                            // pot must be heated
+                            if (progressBar.GetComponent<Slider>().value == 1 && gameObject.tag == "Hotpot")
+                            {
                                 ScoreController.scoreBoard.AddScore();
                                 arrowPlayer.GetComponent<ArrowPlayer>().isEquipped = false;
                                 Destroy(gameObject);
 
                                 //refresh menu
                                 menu.GetComponent<MenuController>().UpdateMenu();
-                            }
-                            
+                            }   
+                                //to do sound
+                        }
+                        else if(menu.GetComponent<MenuController>().type == 2){
+                            // food must be chopped
+                            if (progressBar.GetComponent<Slider>().value == 1 && gameObject.tag == "Meat")
+                            {
+                                ScoreController.scoreBoard.AddScore();
+                                arrowPlayer.GetComponent<ArrowPlayer>().isEquipped = false;
+                                Destroy(gameObject);
+
+                                //refresh menu
+                                menu.GetComponent<MenuController>().UpdateMenu();
+                            }   
                                 //to do sound
                         }
                     }
@@ -232,6 +249,7 @@ public class ObjectController : MonoBehaviour
 
                 table.GetComponent<Table>().isEmpty = false;
                 transform.SetParent(table.transform);
+                transform.localRotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, 1.0f));
                 transform.localPosition = new Vector3(0.0f, 0.75f, 0.0f);
             }
         }
@@ -264,6 +282,7 @@ public class ObjectController : MonoBehaviour
 
                 table.GetComponent<Table>().isEmpty = false;
                 transform.SetParent(table.transform);
+                transform.localRotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, 1.0f));
                 transform.localPosition = new Vector3(0.0f, 0.75f, 0.0f);
             }
         }
@@ -308,7 +327,7 @@ public class ObjectController : MonoBehaviour
     private void ChoppingFood() {
         if (progressBar.GetComponent<Slider>().value == 1){
             //to do change status
-            statusBar.SetActive(false);
+            //statusBar.SetActive(false);
             return;
         }
         progressBar.GetComponent<Slider>().value += 0.1f;

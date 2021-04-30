@@ -20,28 +20,33 @@ public class Table : MonoBehaviour
     }
 
     private void Update() {
-        // get food from table
+        // get food or pot from table
         
-        if (isSelected && type == 2 && Input.GetKeyDown(KeyCode.G) && !player.GetComponent<Player>().isEquipped)
+        if (type == 2 || type == 3)
         {
-            Vector3 distanceToPlayer = player.transform.position - transform.position;
-            if (distanceToPlayer.magnitude <= tableList.GetComponent<TableController>().selectedRange)
-            {  
-                GameObject duplicate = Instantiate(food);
-                duplicate.GetComponent<ObjectController>().table = null;
-                duplicate.GetComponent<ObjectController>().pickupPlayer = 1;
+            if (isSelected && Input.GetKeyDown(KeyCode.G) && !player.GetComponent<Player>().isEquipped)
+            {   
+                Vector3 distanceToPlayer = player.transform.position - transform.position;
+                if (distanceToPlayer.magnitude <= tableList.GetComponent<TableController>().selectedRange)
+                {  
+                    GameObject duplicate = Instantiate(food);
+                    duplicate.GetComponent<ObjectController>().table = null;
+                    duplicate.GetComponent<ObjectController>().pickupPlayer = 1;
+                }
             }
         }
 
-        
-        if (isSelected && type == 2 && Input.GetKeyDown(KeyCode.K) && !arrowPlayer.GetComponent<ArrowPlayer>().isEquipped)
+        if (type == 2 || type == 3)
         {
-            Vector3 distanceToPlayer = arrowPlayer.transform.position - transform.position;
-            if (distanceToPlayer.magnitude <= tableList.GetComponent<TableController>().selectedRange)
-            {  
-                GameObject duplicate = Instantiate(food);
-                duplicate.GetComponent<ObjectController>().table = null;
-                duplicate.GetComponent<ObjectController>().pickupPlayer = 2;
+            if (isSelected && Input.GetKeyDown(KeyCode.K) && !arrowPlayer.GetComponent<ArrowPlayer>().isEquipped)
+            {
+                Vector3 distanceToPlayer = arrowPlayer.transform.position - transform.position;
+                if (distanceToPlayer.magnitude <= tableList.GetComponent<TableController>().selectedRange)
+                {  
+                    GameObject duplicate = Instantiate(food);
+                    duplicate.GetComponent<ObjectController>().table = null;
+                    duplicate.GetComponent<ObjectController>().pickupPlayer = 2;
+                }
             }
         }
     }
