@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
 
         Vector3 moveDirection = new Vector3(movementX, 0.0f, movementZ);
         // Vector3 moveDirection = new Vector3(xDirection, 0.0f, zDirection);
-        // moveDirection.Normalize();
+        moveDirection.Normalize();
 
         transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
 
