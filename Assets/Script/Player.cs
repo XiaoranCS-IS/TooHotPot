@@ -66,7 +66,6 @@ public class Player : MonoBehaviour
             runEffect.Stop();
         }
         else{
-            runEffect.Clear();
             runEffect.Play();
         }
 

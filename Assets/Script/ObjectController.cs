@@ -37,7 +37,8 @@ public class ObjectController : MonoBehaviour
                 coll.isTrigger = true;
                 player.GetComponent<Player>().isEquipped = true;
                 transform.SetParent(player.transform);
-                transform.localPosition = new Vector3(0.0f, 3.0f, 3.0f);
+                transform.localRotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, 1.0f));
+                transform.localPosition = new Vector3(0.0f, 2.0f, 3.0f);
             }
             else if(pickupPlayer == 2){
                 isEquipped = true;
@@ -45,7 +46,8 @@ public class ObjectController : MonoBehaviour
                 coll.isTrigger = true;
                 arrowPlayer.GetComponent<ArrowPlayer>().isEquipped = true;
                 transform.SetParent(arrowPlayer.transform);
-                transform.localPosition = new Vector3(0.0f, 3.0f, 3.0f);
+                transform.localRotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, 1.0f));
+                transform.localPosition = new Vector3(0.0f, 2.0f, 3.0f);
             }
         }
     }
@@ -281,7 +283,8 @@ public class ObjectController : MonoBehaviour
         }
         player.GetComponent<Player>().isEquipped = true;
         transform.SetParent(player.transform);
-        transform.localPosition = new Vector3(0.0f, 3.0f, 3.0f);
+        transform.localRotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, 1.0f));
+        transform.localPosition = new Vector3(0.0f, 2.0f, 3.0f);
     }
 
     private void ArrowPlayerPickUp() {
@@ -295,7 +298,8 @@ public class ObjectController : MonoBehaviour
         }
         arrowPlayer.GetComponent<ArrowPlayer>().isEquipped = true;
         transform.SetParent(arrowPlayer.transform);
-        transform.localPosition = new Vector3(0.0f, 3.0f, 3.0f);
+        transform.localRotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, 1.0f));
+        transform.localPosition = new Vector3(0.0f, 2.0f, 3.0f);
     }
 
     private void PlayerDropOff() {

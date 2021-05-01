@@ -66,7 +66,6 @@ public class ArrowPlayer : MonoBehaviour
             runEffect.Stop();
         }
         else{
-            runEffect.Clear();
             runEffect.Play();
         }
 

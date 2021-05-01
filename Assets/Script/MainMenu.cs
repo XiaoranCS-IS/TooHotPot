@@ -22,6 +22,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayBtnPressed() {
         mainMenu.gameObject.SetActive(false);
+        controlMenu.gameObject.SetActive(false);
         timeCount.gameObject.SetActive(true);
     }
 
