@@ -153,6 +153,11 @@ public class ObjectController : MonoBehaviour
                     if (table.GetComponent<Table>().isSelected && table.GetComponent<Table>().type == 4){
                         ChoppingFood();
                     }
+
+                    //if H pressed and food on selected heat table
+                    if (table.GetComponent<Table>().isSelected && table.GetComponent<Table>().type == 5){
+                        ChoppingFood();
+                    }
                 }
             }
            
@@ -253,6 +258,11 @@ public class ObjectController : MonoBehaviour
                     if (table.GetComponent<Table>().isSelected && table.GetComponent<Table>().type == 4){
                         ChoppingFood();
                     }
+
+                    //if L pressed and food on selected chopping table
+                    if (table.GetComponent<Table>().isSelected && table.GetComponent<Table>().type == 5){
+                        ChoppingFood();
+                    }
                 }
             }
            
@@ -296,15 +306,32 @@ public class ObjectController : MonoBehaviour
             table = tableList.GetComponent<TableController>().selectedTable;
             if (table.GetComponent<Table>().isEmpty)
             {
-                isEquipped = false;
-                rb.isKinematic = false;
-                coll.isTrigger = false;
-                player.GetComponent<Player>().isEquipped = false;
+                if ((gameObject.tag == "SpicyHotpot" || gameObject.tag == "MildHotpot") && table.GetComponent<Table>().type != 4)
+                {
+                    isEquipped = false;
+                    rb.isKinematic = false;
+                    coll.isTrigger = false;
+                    player.GetComponent<Player>().isEquipped = false;
 
-                table.GetComponent<Table>().isEmpty = false;
-                transform.SetParent(table.transform);
-                transform.localRotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, 1.0f));
-                transform.localPosition = new Vector3(0.0f, 0.75f, 0.0f);
+                    table.GetComponent<Table>().isEmpty = false;
+                    transform.SetParent(table.transform);
+                    transform.localRotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, 1.0f));
+                    transform.localPosition = new Vector3(0.0f, 1f, 0.0f);
+                }
+                else if((gameObject.tag == "Meat" || gameObject.tag == "Mushroom") && table.GetComponent<Table>().type != 5)
+                {
+                    isEquipped = false;
+                    rb.isKinematic = false;
+                    coll.isTrigger = false;
+                    player.GetComponent<Player>().isEquipped = false;
+
+                    table.GetComponent<Table>().isEmpty = false;
+                    transform.SetParent(table.transform);
+                    transform.localRotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, 1.0f));
+                    transform.localPosition = new Vector3(0.0f, 1f, 0.0f);
+                }
+                else
+                    return;
             }
         }
         // drop object on ground
@@ -329,15 +356,32 @@ public class ObjectController : MonoBehaviour
             table = tableList.GetComponent<TableController>().arrowPlayerSelectedTable;
             if (table.GetComponent<Table>().isEmpty)
             {
-                isEquipped = false;
-                rb.isKinematic = false;
-                coll.isTrigger = false;
-                arrowPlayer.GetComponent<ArrowPlayer>().isEquipped = false;
+                if ((gameObject.tag == "SpicyHotpot" || gameObject.tag == "MildHotpot") && table.GetComponent<Table>().type != 4)
+                {
+                     isEquipped = false;
+                    rb.isKinematic = false;
+                    coll.isTrigger = false;
+                    arrowPlayer.GetComponent<ArrowPlayer>().isEquipped = false;
 
-                table.GetComponent<Table>().isEmpty = false;
-                transform.SetParent(table.transform);
-                transform.localRotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, 1.0f));
-                transform.localPosition = new Vector3(0.0f, 0.75f, 0.0f);
+                    table.GetComponent<Table>().isEmpty = false;
+                    transform.SetParent(table.transform);
+                    transform.localRotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, 1.0f));
+                    transform.localPosition = new Vector3(0.0f, 0.75f, 0.0f);
+                }
+                else if((gameObject.tag == "Meat" || gameObject.tag == "Mushroom") && table.GetComponent<Table>().type != 5)
+                {
+                     isEquipped = false;
+                    rb.isKinematic = false;
+                    coll.isTrigger = false;
+                    arrowPlayer.GetComponent<ArrowPlayer>().isEquipped = false;
+
+                    table.GetComponent<Table>().isEmpty = false;
+                    transform.SetParent(table.transform);
+                    transform.localRotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, 1.0f));
+                    transform.localPosition = new Vector3(0.0f, 1f, 0.0f);
+                }
+                else
+                    return;
             }
         }
         // drop object on ground

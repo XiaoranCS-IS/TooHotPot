@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public float speed;
     public float rotationSpeed;
     public bool isEquipped;
+    public ParticleSystem runEffect;
 
     private float movementX;
     private float movementZ;
@@ -59,6 +60,14 @@ public class Player : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.A)||Input.GetKeyUp(KeyCode.D))
         {
             movementX = 0;
+        }
+
+        if (movementX == 0 && movementZ == 0){
+            runEffect.Stop();
+        }
+        else{
+            runEffect.Clear();
+            runEffect.Play();
         }
 
         if (moveDirection != Vector3.zero) {

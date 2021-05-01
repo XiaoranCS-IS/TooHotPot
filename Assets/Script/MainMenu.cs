@@ -5,11 +5,14 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     private Canvas mainMenu;
+    public Canvas controlMenu;
+    public GameObject timeCount;
 
     // Start is called before the first frame update
     void Start()
     {
-        mainMenu = GetComponent<Canvas>();  
+        mainMenu = GetComponent<Canvas>(); 
+        timeCount.gameObject.SetActive(false);
     }
 
     public void ExitBtnPressed() {
@@ -19,5 +22,11 @@ public class MainMenu : MonoBehaviour
 
     public void PlayBtnPressed() {
         mainMenu.gameObject.SetActive(false);
+        timeCount.gameObject.SetActive(true);
+    }
+
+    public void ControlBtnPressed() {
+        mainMenu.gameObject.SetActive(false);
+        controlMenu.gameObject.SetActive(true);
     }
 }

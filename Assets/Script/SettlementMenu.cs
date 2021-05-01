@@ -10,6 +10,9 @@ public class SettlementMenu : MonoBehaviour
 
     public GameObject scoreBoard;
     public Text scoreText;
+    public GameObject star1;
+    public GameObject star2;
+    public GameObject star3;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,15 @@ public class SettlementMenu : MonoBehaviour
     public void GameOver() {
         settlementMenu.gameObject.SetActive(true);
         scoreText.text = scoreBoard.GetComponent<ScoreController>().score.ToString();
+        if (scoreBoard.GetComponent<ScoreController>().score < 100)
+        {
+            star2.SetActive(false);
+            star3.SetActive(false);
+        }
+        else if (scoreBoard.GetComponent<ScoreController>().score < 250)
+        {
+            star3.SetActive(false);
+        }
     }
 
     public void RestartBtnPressed() {

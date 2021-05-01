@@ -6,7 +6,7 @@ public class Table : MonoBehaviour
 {
     public bool isSelected;
     public bool isEmpty;
-    //1. empty table 2.food table 3.pot table 4.chopping table
+    //1. empty table 2.food table 3.pot table 4.chopping table 5.heat table
     public int type;
     public GameObject food;
     public GameObject player;

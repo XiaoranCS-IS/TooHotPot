@@ -19,8 +19,8 @@ public class TableController : MonoBehaviour
     
 
     private void Start() {
-        for (int i = 0; i < table.Length; i++)
-            table[i].GetComponent<Renderer>().material.color = unSelectedColor;
+        // for (int i = 0; i < table.Length; i++)
+            // table[i].GetComponent<Renderer>().material.color = unSelectedColor;
     }
 
     // Update is called once per frame
@@ -46,14 +46,16 @@ public class TableController : MonoBehaviour
                 arrowPlayerSelectedTable = table[i];
             }
 
-            LeaveTable(table[i].GetComponent<Renderer>());
+            // LeaveTable(table[i].GetComponent<Renderer>());
+            LeaveTable(table[i]);
         }
 
         if (selectedTable)
         {
             Vector3 distance = player.position - selectedTable.transform.position;
             if(distance.magnitude <= selectedRange)
-                SelectTable(selectedTable.GetComponent<Renderer>());
+                SelectTable(selectedTable);
+                // SelectTable(selectedTable.GetComponent<Renderer>());
             else
                 selectedTable = null;
         }
@@ -62,19 +64,29 @@ public class TableController : MonoBehaviour
         {
             Vector3 distance = arrowPlayer.position - arrowPlayerSelectedTable.transform.position;
             if(distance.magnitude <= selectedRange)
-                SelectTable(arrowPlayerSelectedTable.GetComponent<Renderer>());
+                SelectTable(arrowPlayerSelectedTable);
+                // SelectTable(arrowPlayerSelectedTable.GetComponent<Renderer>());
             else
                 arrowPlayerSelectedTable = null;
         }
     }
 
-     private void SelectTable(Renderer tableR) {  
-        tableR.material.color = selectedColor;
-        tableR.GetComponent<Table>().isSelected = true;
+    // private void SelectTable(Renderer tableR) {  
+    //     tableR.material.color = selectedColor;
+    //     tableR.GetComponent<Table>().isSelected = true;
+    // }
+
+    // private void LeaveTable(Renderer tableR) {
+    //     tableR.material.color = unSelectedColor;
+    //     tableR.GetComponent<Table>().isSelected = false;
+    // }
+    private void SelectTable(GameObject table) {
+        table.GetComponent<Outline>().enabled = true;
+        table.GetComponent<Table>().isSelected = true;
     }
 
-    private void LeaveTable(Renderer tableR) {
-        tableR.material.color = unSelectedColor;
-        tableR.GetComponent<Table>().isSelected = false;
+    private void LeaveTable(GameObject table) {
+        table.GetComponent<Outline>().enabled = false;
+        table.GetComponent<Table>().isSelected = false;
     }
 }
