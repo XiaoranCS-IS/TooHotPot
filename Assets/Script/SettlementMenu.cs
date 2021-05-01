@@ -23,6 +23,7 @@ public class SettlementMenu : MonoBehaviour
 
     public void GameOver() {
         settlementMenu.gameObject.SetActive(true);
+        gameObject.GetComponent<AudioSource>().Play();
         scoreText.text = scoreBoard.GetComponent<ScoreController>().score.ToString();
         if (scoreBoard.GetComponent<ScoreController>().score < 100)
         {
@@ -37,7 +38,7 @@ public class SettlementMenu : MonoBehaviour
 
     public void RestartBtnPressed() {
         //to do
-        settlementMenu.gameObject.SetActive(false);
+        // settlementMenu.gameObject.SetActive(false);
         SceneManager.LoadScene("SampleScene");
     }
 }

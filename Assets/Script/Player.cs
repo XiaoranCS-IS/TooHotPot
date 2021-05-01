@@ -23,8 +23,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // float xDirection = Input.GetAxis("Horizontal");
-        // float zDirection = Input.GetAxis("Vertical");
+        if (Input.GetKeyDown(KeyCode.G) || Input.GetKeyDown(KeyCode.H))
+        {
+            gameObject.GetComponent<AudioSource>().Play();
+        }
 
         Vector3 moveDirection = new Vector3(movementX, 0.0f, movementZ);
         // Vector3 moveDirection = new Vector3(xDirection, 0.0f, zDirection);

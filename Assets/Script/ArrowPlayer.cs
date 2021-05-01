@@ -23,12 +23,14 @@ public class ArrowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // float xDirection = Input.GetAxis("Horizontal");
-        // float zDirection = Input.GetAxis("Vertical");
+        if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L))
+        {
+            gameObject.GetComponent<AudioSource>().Play();
+        }
 
         Vector3 moveDirection = new Vector3(movementX, 0.0f, movementZ);
         // Vector3 moveDirection = new Vector3(xDirection, 0.0f, zDirection);
-        // moveDirection.Normalize();
+        moveDirection.Normalize();
 
         transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
 

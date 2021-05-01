@@ -30,6 +30,7 @@ public class TimeController : MonoBehaviour
         else if (secondsLeft < 0)
         {
             settlementMenu.GetComponent<SettlementMenu>().GameOver();
+            gameObject.SetActive(false);
         }
     }
     
